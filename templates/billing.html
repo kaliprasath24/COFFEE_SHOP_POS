@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> COFFEE MEET </title>
+        <link rel="stylesheet" href="{{ url_for ('static', filename='style.css')}}">
+    </head>
+    <body>
+        <header>
+            COFFEE MEET 
+            <a href="/logout" 
+            style="float: right;color: white;">Logout</a>
+        </header>
+        <div class = "container">
+
+        <!-- menu items left side-->
+         <div class="menu">
+            <input type="text" placeholder="search: Tea / Milkshakes / puffs....">
+            <h3> Cold Drinks </h3>
+            <button onclick="addItem('Lime Juice',30)"><span class="item-name">Lime Juice</span>
+            <span class="item-price">&#8377;30</span></button>
+            <button onclick="addItem('Lime Soda',40)"><span class="item-name">Lime Soda</span>
+            <span class="item-price">&#8377;40</span></button>
+            <button onclick="addItem('Mint Mojito',60)"><span class="item-name">Mint Mojito</span>
+            <span class="item-price">&#8377;60</span></button>
+            <button onclick="addItem('Sarbath Juice',40)"><span class="item-name">Sarbath Juice</span>
+            <span class="item-price">&#8377;40</span></button>
+
+
+            <h3> Bun Items </h3>
+            <button onclick="addItem('Bun Butter',30)"><span class="item-name">Bun Butter</span>
+            <span class="item-price">&#8377;30</span></button>
+            <button onclick="addItem('Nattu Sarkarai Bun',30)"><span class="item-name">Nattu Sarkarai Bun</span>
+            <span class="item-price">&#8377;30</span></button>
+            <button onclick="addItem('Chocolate Bun',30)"><span class="item-name">Chocolate Bun</span>
+            <span class="item-price">&#8377;30</span></button>
+            <button onclick="addItem('Special Choco Bun',40)"><span class="item-name">Special Choco Bun</span>
+            <span class="item-price">&#8377;40</span></button>
+            <button onclick="addItem('Palkova Bun',40)"><span class="item-name">Palkova Bun</span>
+            <span class="item-price">&#8377;40</span></button>
+            <button onclick="addItem('Peanut Bun',40)"><span class="item-name">Peanut Bun</span>
+            <span class="item-price">&#8377;30</span></button>
+
+
+         </div>
+        </div>
+    </body>
+</html>
