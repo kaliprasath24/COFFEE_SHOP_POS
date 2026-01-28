@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> COFFEE MEET </title>
+        <link rel="stylesheet" href="{{ url_for ('static', filename='style.css')}}">
+    </head>
+    <body>
+        <header>
+            COFFEE MEET 
+            <a href="/logout" 
+            style="float: right;color: white;">Logout</a>
+        </header>
+        <div class = "container">
+
+        <!-- menu items left side-->
+         <div class="menu">
+            <input type="text" placeholder="search: Tea / Milkshakes / puffs....">
+
+
+            <h3> Tea Variety </h3>
+            <button onclick="addItem('Tea',10)"><span class="item-name">Tea</span>
+            <span class="item-price">&#8377;10</span></button>
+            <button onclick="addItem('Large Tea',15)"><span class="item-name">Large Tea</span>
+            <span class="item-price">&#8377;15</span></button>
+            <button onclick="addItem('Nattu Sarkarai Tea',15)"><span class="item-name">Nattu Sarkarai Tea</span>
+            <span class="item-price">&#8377;15</span></button>
+            <button onclick="addItem('Ginger Tea',20)"><span class="item-name">Ginger Tea</span>
+            <span class="item-price">&#8377;20</span></button>
+            <button onclick="addItem('Black Tea',15)"><span class="item-name">Black Tea</span>
+            <span class="item-price">&#8377;15</span></button>
+            <button onclick="addItem('Lemon Tea',20)"><span class="item-name">Lemon Tea</span>
+            <span class="item-price">&#8377;20</span></button>
+            <button onclick="addItem('Masala Tea',20)"><span class="item-name">Masala Tea</span>
+            <span class="item-price">&#8377;20</span></button>
+            <button onclick="addItem('Sukku Tea',20)"><span class="item-name">Sukku Tea</span>
+            <span class="item-price">&#8377;20</span></button>
+            <button onclick="addItem('Sulaimani Tea',20)"><span class="item-name">Sulaimani Tea</span>
+            <span class="item-price">&#8377;20</span></button>
+            <button onclick="addItem('Cardamom Tea',20)"><span class="item-name">Cardamom Tea</span>
+            <span class="item-price">&#8377;20</span></button>
+            <button onclick="addItem('Black Cardamom Tea',20)"><span class="item-name">Black Cardamom Tea</span>
+            <span class="item-price">&#8377;20</span></button>
+            <button onclick="addItem('Iced Tea',35)"><span class="item-name">Iced Tea</span>
+            <span class="item-price">&#8377;35</span></button>
+            <button onclick="addItem('Parcel Tea',20)"><span class="item-name">Parcel Tea</span>
+            <span class="item-price">&#8377;20</span></button>
+            <button onclick="addItem('Parcel Tea',30)"><span class="item-name">Parcel Tea</span>
+            <span class="item-price">&#8377;30</span></button>
+            <button onclick="addItem('Parcel Tea',40)"><span class="item-name">Parcel Tea</span>
+            <span class="item-price">&#8377;40</span></button>
+            <button onclick="addItem('Parcel Tea',50)"><span class="item-name">Parcel Tea</span>
+            <span class="item-price">&#8377;50</span></button>
+
+
+
+            <h3> Snacks </h3>
+            <button onclick="addItem('Veg Puffs',15)"><span class="item-name">Veg Puffs</span>
+            <span class="item-price">&#8377;15</span></button>
+            <button onclick="addItem('Egg Puffs',20)"><span class="item-name">Egg Puffs</span>
+            <span class="item-price">&#8377;20</span></button>
+            <button onclick="addItem('Mushroom puffs',20)"><span class="item-name">Mushroom Puffs</span>
+            <span class="item-price">&#8377;20</span></button>
+            <button onclick="addItem('Brownie',50)"><span class="item-name">Brownie</span>
+            <span class="item-price">&#8377;50</span></button>
+            <button onclick="addItem('Choco Lava',50)"><span class="item-name">Choco Lava</span>
+            <span class="item-price">&#8377;50</span></button>
+
+
+
+            <h3> Milk Items </h3>
+            <button onclick="addItem('Milk',15)"><span class="item-name">Milk</span>
+            <span class="item-price">&#8377;15</span></button>
+            <button onclick="addItem('Nattu Sarkarai Milk',20)"><span class="item-name">Nattu Sarkarai Milk</span>
+            <span class="item-price">&#8377;20</span></button>
+            <button onclick="addItem('Sukku Milk',20)"><span class="item-name">Sukku Milk</span>
+            <span class="item-price">&#8377;20</span></button>
+            <button onclick="addItem('Masala Milk',20)"><span class="item-name">Masala Milk</span>
+            <span class="item-price">&#8377;20</span></button>
+            <button onclick="addItem('Palkova Milk',25)"><span class="item-name">Palkova Milk</span>
+            <span class="item-price">&#8377;25</span></button>
+            <button onclick="addItem('Boost',20)"><span class="item-name">Boost</span>
+            <span class="item-price">&#8377;20</span></button>
+            <button onclick="addItem('Horlicks',20)"><span class="item-name">Horlicks</span>
+            <span class="item-price">&#8377;20</span></button>
+
+
+
+            <h3> Coffee Variety </h3>
+            <button onclick="addItem('Filter Coffee',25)"><span class="item-name">Filter Coffee</span>
+            <span class="item-price">&#8377;25</span></button>
+            <button onclick="addItem('Nattu Sarkarai Coffee',25)"><span class="item-name">Nattu Sarkarai Coffee</span>
+            <span class="item-price">&#8377;25</span></button>
+            <button onclick="addItem('Sukku Coffee',25)"><span class="item-name">Sukku Coffee</span>
+            <span class="item-price">&#8377;25</span></button>
+            <button onclick="addItem('Black Coffee',25)"><span class="item-name">Black Coffee</span>
+            <span class="item-price">&#8377;25</span></button>
+
+
+
+            <h3> Cold Drinks </h3>
+            <button onclick="addItem('Lime Juice',30)"><span class="item-name">Lime Juice</span>
+            <span class="item-price">&#8377;30</span></button>
+            <button onclick="addItem('Lime Soda',40)"><span class="item-name">Lime Soda</span>
+            <span class="item-price">&#8377;40</span></button>
+            <button onclick="addItem('Mint Mojito',60)"><span class="item-name">Mint Mojito</span>
+            <span class="item-price">&#8377;60</span></button>
+            <button onclick="addItem('Sarbath Juice',40)"><span class="item-name">Sarbath Juice</span>
+            <span class="item-price">&#8377;40</span></button>
+            <button onclick="addItem('Chilli Lemon Soda',40)"><span class="item-name">Chilli Lemon Soda</span>
+            <span class="item-price">&#8377;40</span></button>
+            <button onclick="addItem('Mojito Blue Curacao',60)"><span class="item-name">Mojito Blue Curacao</span>
+            <span class="item-price">&#8377;60</span></button>
+            <button onclick="addItem('Lemon Ginger Mojito',60)"><span class="item-name">Lemon Ginger Mojito</span>
+            <span class="item-price">&#8377;60</span></button>
+
+
+
+            <h3> Bun Items </h3>
+            <button onclick="addItem('Bun Butter',30)"><span class="item-name">Bun Butter</span>
+            <span class="item-price">&#8377;30</span></button>
+            <button onclick="addItem('Nattu Sarkarai Bun',30)"><span class="item-name">Nattu Sarkarai Bun</span>
+            <span class="item-price">&#8377;30</span></button>
+            <button onclick="addItem('Chocolate Bun',30)"><span class="item-name">Chocolate Bun</span>
+            <span class="item-price">&#8377;30</span></button>
+            <button onclick="addItem('Special Choco Bun',40)"><span class="item-name">Special Choco Bun</span>
+            <span class="item-price">&#8377;40</span></button>
+            <button onclick="addItem('Palkova Bun',40)"><span class="item-name">Palkova Bun</span>
+            <span class="item-price">&#8377;40</span></button>
+            <button onclick="addItem('Peanut Bun',40)"><span class="item-name">Peanut Bun</span>
+            <span class="item-price">&#8377;30</span></button>
+
+
+
+            <h3> Milk Shakes </h3>
+            <button onclick="addItem('Rose Milk',50)"><span class="item-name">Rose Milk</span>
+            <span class="item-price">&#8377;50</span></button>
+            <button onclick="addItem('Badam Milk',50)"><span class="item-name">Badam Milk</span>
+            <span class="item-price">&#8377;50</span></button>
+            <button onclick="addItem('Cold Coffee',60)"><span class="item-name">Cold Coffee</span>
+            <span class="item-price">&#8377;60</span></button>
+            <button onclick="addItem('Chocolate MilkShake',60)"><span class="item-name">Chocolate Milkshake</span>
+            <span class="item-price">&#8377;60</span></button>
+            <button onclick="addItem('ButterScotch Milkshake',60)"><span class="item-name">ButterScotch Milkshake</span>
+            <span class="item-price">&#8377;60</span></button>
+            <button onclick="addItem('Vanilla Milkshake',60)"><span class="item-name">Vanilla MilkShake</span>
+            <span class="item-price">&#8377;60</span></button>
+            <button onclick="addItem('Coconut MilkShake',60)"><span class="item-name">Coconut MilkShake</span>
+            <span class="item-price">&#8377;60</span></button>
+            <button onclick="addItem('Cold Boost',60)"><span class="item-name">Cold Boost</span>
+            <span class="item-price">&#8377;60</span></button>
+            <button onclick="addItem('Cold Horlicks',60)"><span class="item-name">Cold Horlicks</span>
+            <span class="item-price">&#8377;60</span></button>
+            <button onclick="addItem('Peanut MilkShake',70)"><span class="item-name">Peanut MilkShake</span>
+            <span class="item-price">&#8377;70</span></button>
+            <button onclick="addItem('Oreo MilkShake',70)"><span class="item-name">Oreo MilkShake</span>
+            <span class="item-price">&#8377;70</span></button>
+            <button onclick="addItem('Brownie MilkShake',110)"><span class="item-name">Brownie MilkShake</span>
+            <span class="item-price">&#8377;110</span></button>
+
+
+
+            <h3> Biscuits Variety </h3>
+            <button onclick="addItem('Salt Biscuit',6)"><span class="item-name">Salt Biscuit</span>
+            <span class="item-price">&#8377;6</span></button>
+            <button onclick="addItem('Butter Biscuit',6)"><span class="item-name">Butter Biscuit</span>
+            <span class="item-price">&#8377;6</span></button>
+            <button onclick="addItem('Chocolate Biscuit',6)"><span class="item-name">Chocolate Biscuit</span>
+            <span class="item-price">&#8377;6</span></button>
+            <button onclick="addItem('Peanut Biscuit',6)"><span class="item-name">Peanut Biscuit</span>
+            <span class="item-price">&#8377;6</span></button>
+
+
+
+            <!-- Right side Billing -->
+            
+            <div class="bill">
+                <h3> Current Bill </h3>
+
+                <table id="Billing Table">
+                    <tr>
+                        <th>Item</th>
+                        <th>Qty</th>
+                        <th>Total</th>
+                    </tr>
+                </table>
+                <p>Subtotal: &#8377; <span id="subtotal">0</span></p>
+                <p>GST (5%): &#8377; <span id="gst">0</span></p>
+                <h3>Total: &#8377; <span id="total">0</span></h3>
+
+                <select id="Payment">
+                    <option>Cash</option>
+                    <option>UPI</option>
+                    <option>Card</option>
+                </select>
+
+                <button onclick="printBill()">PRINT BILL</button>
+
+            </div>
+
+
+
+         </div>
+        </div>
+        <script src="{{ url_for('static', filename = 'script.js')}}"></script>
+    </body>
+</html>
