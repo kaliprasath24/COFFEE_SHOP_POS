@@ -109,12 +109,19 @@ header {
 .container {
     display: flex;
     flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    box-sizing: border-box;
     gap: 20px;
     padding: 20px;
 }
 
 .menu {
-    flex: 2;
+    flex: 1 1 60%;
+    min-width: 300px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .menu button {
@@ -129,11 +136,13 @@ header {
 }
 
 .bill {
-    flex: 1;
+    flex: 1 1 60%;
+    min-width: 300px;
     background: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .bill table {
@@ -145,4 +154,19 @@ header {
     border-bottom: 1px solid #ddd;
     padding: 8px;
     text-align: center;
+}
+/* Quantity + / - buttons inside bill table */
+.bill td button {
+    padding: 4px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 6px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 1px solid #888;
+    background: #f1f1f1;
+}
+
+.bill td button:hover {
+    background: #ddd;
 }

@@ -168,26 +168,35 @@
             <span class="item-price">&#8377;6</span></button>
             <button onclick="addItem('Peanut Biscuit',6)"><span class="item-name">Peanut Biscuit</span>
             <span class="item-price">&#8377;6</span></button>
-
-
+   
 
             <!-- Right side Billing -->
             
             <div class="bill">
+
+                <div class ="bill-header">
+                    <p>Bill No: <span id ="billno"></span></p>
+                    <p>Date: <span id="billdate"></span></p>
+                </div>
+
                 <h3> Current Bill </h3>
 
-                <table id="Billing Table">
+                <table id="billtable">
                     <tr>
                         <th>Item</th>
                         <th>Qty</th>
                         <th>Total</th>
                     </tr>
                 </table>
+                <label>
+                    <input type="checkbox" id="gstToggle"> GST 5%
+                </label>
+                
                 <p>Subtotal: &#8377; <span id="subtotal">0</span></p>
                 <p>GST (5%): &#8377; <span id="gst">0</span></p>
                 <h3>Total: &#8377; <span id="total">0</span></h3>
 
-                <select id="Payment">
+                <select id="payment">
                     <option>Cash</option>
                     <option>UPI</option>
                     <option>Card</option>
@@ -197,10 +206,12 @@
 
             </div>
 
-
-
-         </div>
         </div>
-        <script src="{{ url_for('static', filename = 'script.js')}}"></script>
+        </div>
+        <script src="/static/script.js"></script>
+
+        <iframe id="printFrame" style="display:none;"></iframe>
+
+        <!--<script src="{{ url_for('static', filename = 'script.js')}}"></script>-->
     </body>
 </html>

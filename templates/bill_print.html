@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Print Bill</title>
+    <style>
+        body {
+            font-family: monospace;
+            width: 300px;   /* 80mm printer width */
+            margin: auto;
+            text-align: center;
+        }
+
+        h2 {
+            margin: 5px 0;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px dashed black;
+            margin: 6px 0;
+        }
+
+        table {
+            width: 100%;
+            font-size: 14px;
+        }
+
+        th, td {
+            padding: 3px 0;
+        }
+
+        .left { text-align: left; }
+        .right { text-align: right; }
+        .center { text-align: center; }
+
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+
+        @media print {
+            button { display: none; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>☕ Coffee Meet</h2>
+
+    <div>39,Nehru Nagar,kalapatti main road </div>
+    <div>Coimbatore-641014</div>
+    <div>Ph: 6383367821,8248224157</div>
+
+    <hr>
+
+    <div>Bill No: {{ bill_no }}</div>
+    <div>Date: {{ date }}</div>
+
+    <hr>
+
+    <table>
+        <tr>
+            <th class="left">Item</th>
+            <th class="center">Qty</th>
+            <th class="right">Total</th>
+        </tr>
+    </table>
+
+    <hr>
+
+    <table>
+        {% for item in items %}
+        <tr>
+            <td class="left">{{ item.name }}</td>
+            <td class="center">{{ item.qty }}</td>
+            <td class="right">₹ {{ item.total }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <hr>
+
+    <h3>Grand Total</h3>
+    <h2>₹ {{ grand_total }}</h2>
+
+    <hr>
+
+    <div>Payment: {{ payment_mode }}</div>
+
+    <hr>
+
+    <p>"Another day, another delicious choice.see you soon!" ☕</p>
+
+    <p>"Thank You! Visit Again ☕</p>
+
+    <script>
+        window.onload = function() {
+            window.print();
+        };
+        </script>
+        
+
+</body>
+</html>

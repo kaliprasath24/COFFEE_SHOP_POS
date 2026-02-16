@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reports</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background: #eee;
+        }
+
+        .total-box {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h1>📊 Sales Reports</h1>
+
+<!-- Daily Filter -->
+<form method="get" action="/reports">
+    <label>Select Date:</label>
+    <input type="date" name="date" required>
+    <button type="submit">View Daily Report</button>
+</form>
+
+<!-- Monthly Filter -->
+<form method="get" action="/reports">
+    <label>Select Month (YYYY-MM):</label>
+    <input type="text" name="date" placeholder="2026-01" required>
+    <input type="hidden" name="monthly" value="true">
+    <button type="submit">View Monthly Report</button>
+</form>
+
+{% if rows %}
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Bill No</th>
+        <th>Item</th>
+        <th>Qty</th>
+        <th>Price</th>
+        <th>GST</th>
+        <th>Total</th>
+        <th>Payment</th>
+        <th>Date</th>
+    </tr>
+
+    {% for r in rows %}
+    <tr>
+        <td>{{ r[0] }}</td>
+        <td>{{ r[1] }}</td>
+        <td>{{ r[2] }}</td>
+        <td>{{ r[3] }}</td>
+        <td>{{ r[4] }}</td>
+        <td>{{ r[5] }}</td>
+        <td>{{ r[6] }}</td>
+        <td>{{ r[7] }}</td>
+        <td>{{ r[8] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<div class="total-box">
+    Grand Total: ₹ {{ total_sum }}
+</div>
+
+<br>
+
+<!-- Download Button -->
+<form method="get" action="/download_report">
+    <input type="hidden" name="date" value="{{ selected_date }}">
+    <input type="hidden" name="monthly" value="{{ monthly }}">
+    <button type="submit">⬇ Download CSV</button>
+</form>
+
+{% endif %}
+
+<br>
+<a href="/dashboard">⬅ Back to Dashboard</a>
+
+</body>
+</html>
